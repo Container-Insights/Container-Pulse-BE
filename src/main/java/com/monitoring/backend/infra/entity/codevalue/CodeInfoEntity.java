@@ -1,4 +1,4 @@
-package com.monitoring.backend.infra.entity;
+package com.monitoring.backend.infra.entity.codevalue;
 
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -20,29 +20,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @DynamicUpdate
 @Entity
-@Table(name = "container_info")
-public class ContainerInfoEntity extends BaseTimeEntity {
+@Table(name = "code_info")
+public class CodeInfoEntity extends BaseTimeEntity {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "container_seq")
-	private long containerSeq;
+	@Column(name = "code_seq")
+	private long codeSeq;
 
-	@Column(name = "container_id")
-	private String containerId;
+	@Column(name = "code_id")
+	private String codeId;
 
-	@Column(name = "container_name")
-	private String containerName;
+	@Column(name = "code_name")
+	private String codeName;
 
-	@Column(name = "container_image")
-	private String containerImage;
-
-	@Column(name = "status")
-	private String status;
-
-	@Column(name = "del_yn")
+	@Column(name = "del_yn", nullable = false)
 	private boolean delYn = false;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "con_group_seq", nullable = false)
-	private ContainerGroupEntity containerGroupEntity;
+	@JoinColumn(name = "code_group_seq", nullable = false)
+	private CodeGroupInfoEntity codeGroupInfoEntity;
+
 }

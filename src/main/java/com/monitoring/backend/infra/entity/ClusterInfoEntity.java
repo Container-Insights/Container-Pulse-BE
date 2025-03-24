@@ -6,34 +6,33 @@ import com.monitoring.backend.infra.entity.common.BaseTimeEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
+@DynamicUpdate
 @Entity
-@Table(name = "container_stat")
-public class ContainerStatEntity extends BaseTimeEntity {
+@Table(name = "cluster_info")
+public class ClusterInfoEntity extends BaseTimeEntity {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "container_status_seq")
-	private long containerStatusSeq;
+	@Column(name = "cluster_seq")
+	private long clusterSeq;
 
-	@Column(name = "cpu_usage")
-	private int cpuUsage;
+	@Column(name = "cluster_id")
+	private String clusterId;
 
-	@Column(name = "memory_usage")
-	private long memoryUsage;
+	@Column(name = "cluster_name")
+	private String clusterName;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "container_seq", nullable = false)
-	private ContainerInfoEntity containerInfoEntity;
+	@Column(name = "cluster_type")
+	private String clusterType;
 
+	@Column(name = "del_yn")
+	private boolean delYn = false;
 }

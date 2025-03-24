@@ -20,29 +20,27 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @DynamicUpdate
 @Entity
-@Table(name = "container_info")
-public class ContainerInfoEntity extends BaseTimeEntity {
+@Table(name = "container_group")
+public class ContainerGroupEntity extends BaseTimeEntity {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "container_seq")
-	private long containerSeq;
+	@Column(name = "con_group_seq")
+	private long conGroupSeq;
 
-	@Column(name = "container_id")
-	private String containerId;
+	@Column(name = "con_group_id")
+	private String conGroupId;
 
-	@Column(name = "container_name")
-	private String containerName;
+	@Column(name = "con_group_type")
+	private String conGroupType;
 
-	@Column(name = "container_image")
-	private String containerImage;
-
-	@Column(name = "status")
-	private String status;
+	@Column(name = "con_group_name")
+	private String conGroupName;
 
 	@Column(name = "del_yn")
 	private boolean delYn = false;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "con_group_seq", nullable = false)
-	private ContainerGroupEntity containerGroupEntity;
+	@JoinColumn(name = "node_seq", nullable = false)
+	private NodeInfoEntity nodeInfoEntity;
+
 }

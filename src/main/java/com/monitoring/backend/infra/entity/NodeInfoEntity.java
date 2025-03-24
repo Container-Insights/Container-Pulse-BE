@@ -6,9 +6,12 @@ import com.monitoring.backend.infra.entity.common.BaseTimeEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,15 +20,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @DynamicUpdate
 @Entity
-@Table(name = "host")
-public class HostEntity extends BaseTimeEntity {
+@Table(name = "node_info")
+public class NodeInfoEntity extends BaseTimeEntity {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "host_seq")
-	private long hostSeq;
+	@Column(name = "node_seq")
+	private long nodeSeq;
 
-	@Column(name = "cluster_name")
-	private String clusterName;
+	@Column(name = "node_id")
+	private String nodeId;
 
 	@Column(name = "node_name")
 	private String nodeName;
@@ -34,5 +37,9 @@ public class HostEntity extends BaseTimeEntity {
 	private String ipAddress;
 
 	@Column(name = "del_yn")
-	private boolean delYn;
+	private boolean delYn = false;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "cluster_seq")
+	private ClusterInfoEntity clusterInfoEntity;
 }
