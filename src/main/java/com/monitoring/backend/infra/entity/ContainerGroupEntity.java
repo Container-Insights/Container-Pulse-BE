@@ -27,16 +27,16 @@ public class ContainerGroupEntity extends BaseTimeEntity {
 	@Column(name = "con_group_seq")
 	private long conGroupSeq;
 
-	@Column(name = "con_group_id")
+	@Column(name = "con_group_id", length = 255, nullable = false)
 	private String conGroupId;
 
-	@Column(name = "con_group_type")
+	@Column(name = "con_group_type", length = 10, nullable = false)
 	private String conGroupType;
 
-	@Column(name = "con_group_name")
+	@Column(name = "con_group_name", length = 255, nullable = false)
 	private String conGroupName;
 
-	@Column(name = "del_yn")
+	@Column(name = "del_yn", columnDefinition = "boolean default false not null")
 	private boolean delYn = false;
 
 	@ManyToOne(fetch = FetchType.LAZY)
