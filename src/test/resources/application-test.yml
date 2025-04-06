@@ -6,7 +6,7 @@ spring:
     password: postgres
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     properties:
       hibernate:
         jdbc:
@@ -15,4 +15,3 @@ spring:
         order_updates: true
         default_schema: container
     show-sql: true
-    open-in-view: false
