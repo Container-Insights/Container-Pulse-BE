@@ -27,16 +27,16 @@ public class NodeInfoEntity extends BaseTimeEntity {
 	@Column(name = "node_seq")
 	private long nodeSeq;
 
-	@Column(name = "node_id")
+	@Column(name = "node_id", length = 255, nullable = false)
 	private String nodeId;
 
-	@Column(name = "node_name")
+	@Column(name = "node_name", length = 255, nullable = true)
 	private String nodeName;
 
-	@Column(name = "ip_address")
+	@Column(name = "ip_address", length = 255, nullable = false)
 	private String ipAddress;
 
-	@Column(name = "del_yn")
+	@Column(name = "del_yn", columnDefinition = "boolean default false not null")
 	private boolean delYn = false;
 
 	@ManyToOne(fetch = FetchType.LAZY)

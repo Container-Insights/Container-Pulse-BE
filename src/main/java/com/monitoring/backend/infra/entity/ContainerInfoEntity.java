@@ -27,19 +27,19 @@ public class ContainerInfoEntity extends BaseTimeEntity {
 	@Column(name = "container_seq")
 	private long containerSeq;
 
-	@Column(name = "container_id")
+	@Column(name = "container_id", length = 255, nullable = false)
 	private String containerId;
 
-	@Column(name = "container_name")
+	@Column(name = "container_name", length = 255, nullable = false)
 	private String containerName;
 
-	@Column(name = "container_image")
+	@Column(name = "container_image", length = 255, nullable = false)
 	private String containerImage;
 
-	@Column(name = "status")
+	@Column(name = "status", length = 255, nullable = false)
 	private String status;
 
-	@Column(name = "del_yn")
+	@Column(name = "del_yn", columnDefinition = "boolean default false not null")
 	private boolean delYn = false;
 
 	@ManyToOne(fetch = FetchType.LAZY)

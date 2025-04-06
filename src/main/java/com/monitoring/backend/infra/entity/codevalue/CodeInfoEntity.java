@@ -27,13 +27,13 @@ public class CodeInfoEntity extends BaseTimeEntity {
 	@Column(name = "code_seq")
 	private long codeSeq;
 
-	@Column(name = "code_id")
+	@Column(name = "code_id", length = 10, nullable = false)
 	private String codeId;
 
-	@Column(name = "code_name")
+	@Column(name = "code_name", length = 50, nullable = false)
 	private String codeName;
 
-	@Column(name = "del_yn", nullable = false)
+	@Column(name = "del_yn", columnDefinition = "boolean default false not null")
 	private boolean delYn = false;
 
 	@ManyToOne(fetch = FetchType.LAZY)
