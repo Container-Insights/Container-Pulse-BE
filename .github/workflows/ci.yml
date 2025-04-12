@@ -2,7 +2,8 @@ name: dev-ci
 
 on:
   push:
-    branches: [ "main" ] #메인에 머지시 빌드
+#    branches: [ "main" ] #메인에 머지시 빌드
+    branches: [ "develop" ] #메인에 머지시 빌드
   # pull_request:
   #   branches: [ "main" ]
 
