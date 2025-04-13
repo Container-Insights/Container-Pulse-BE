@@ -52,14 +52,14 @@ public class ClusterQueryRepository {
 				clusterInfoEntity.delYn.eq(false),
 				cursorPaging(clusterListReq.getLastSeq()),
 				typeCheck(clusterListReq.getClusterType()))
-			.orderBy(clusterInfoEntity.createdTime.desc())
+			.orderBy(clusterInfoEntity.createdTime.desc(), clusterInfoEntity.clusterSeq.asc())
 			.limit(pageable.getPageSize())
 			.fetch();
 	}
 
 	//TODO : 클러스터 ID,클러스터 Name, 클러스터 타입으로 조회 가능하도록 변경 필요.
 	/*단건 조회*/
-	public Optional<ClusterInfoRes> findClusterById(long clusterId) {
+	public Optional<ClusterInfoRes> findClusterById(long clusterSeq) {
 		return Optional.ofNullable(
 			queryFactory
 				.select(
@@ -75,7 +75,7 @@ public class ClusterQueryRepository {
 				.from(clusterInfoEntity)
 				.where(
 					clusterInfoEntity.delYn.eq(false),
-					clusterInfoEntity.clusterSeq.eq(clusterId))
+					clusterInfoEntity.clusterSeq.eq(clusterSeq))
 				.leftJoin(codeInfoEntity).on(
 					clusterInfoEntity.clusterType.eq(codeInfoEntity.codeId))
 				.fetchJoin()
