@@ -17,5 +17,5 @@ public class ClusterInfoRes {
 	@Schema(description = "클러스터 생성일자")
 	private LocalDateTime createdDt;
 	@Schema(description = "클러스터 변경일자")
-	private LocalDateTime updateDt;
+	private LocalDateTime updatedDt;
 }
