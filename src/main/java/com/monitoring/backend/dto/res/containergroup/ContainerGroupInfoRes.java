@@ -1,10 +1,12 @@
-package com.monitoring.backend.dto.res.containerGroup;
+package com.monitoring.backend.dto.res.containergroup;
+
+import java.time.LocalDateTime;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
 @Getter
-public class ContainerGroupListRes {
+public class ContainerGroupInfoRes {
 
 	@Schema(description = "컨테이너그룹(쿠버에서 pod) 식별자 - DB 시퀀스값(포함된 컨테이너 조회 시 필요.)", example = "1")
 	private long conGroupSeq;
@@ -12,5 +14,10 @@ public class ContainerGroupListRes {
 	private String conGroupId;
 	@Schema(description = "컨테이너그룹(쿠버에서 pod) 이름 - 없을 수도 있음.")
 	private String conGroupName;
-
+	@Schema(description = "컨테이너그룹(쿠버에서 pod) 타입 - pod또는 도커스웜에서의 서비스")
+	private String conGroupTypeName;
+	@Schema(description = "컨테이너그룹(쿠버에서 pod) 생성일자")
+	private LocalDateTime createdDt;
+	@Schema(description = "컨테이너그룹(쿠버에서 pod) 변경일자")
+	private LocalDateTime updateDt;
 }
