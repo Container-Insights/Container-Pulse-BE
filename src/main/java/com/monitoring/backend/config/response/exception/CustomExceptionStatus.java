@@ -15,9 +15,12 @@ public enum CustomExceptionStatus implements CustomStatus {
 
 	NOT_FOUND_CLUSTER(ResponseStatus.FAIL, "4004","해당하는 클러스터가 존재하지 않습니다."),
 	NOT_FOUND_NODE(ResponseStatus.FAIL, "4005","해당하는 노드를 찾을 수 없습니다."),
+	NOT_FOUND_CONTAINER_GROUP(ResponseStatus.FAIL, "4006","해당하는 컨테이너 그룹을 찾을 수 없습니다."),
+	NOT_FOUND_CONTAINER(ResponseStatus.FAIL, "4007","해당하는 컨테이너를 찾을 수 없습니다."),
 
 	;
 	private final ResponseStatus status;
 	private final String code;
 	private final String message;
+
 }
