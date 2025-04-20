@@ -46,7 +46,7 @@ public class NodeController {
 	 * @param nodeSeq
 	 * @return
 	 */
-	@GetMapping("node/{nodeSeq}")
+	@GetMapping("nodes/{nodeSeq}")
 	public DataResponse<NodeInfoRes> getNodeInfo(
 		@PathVariable(name = "nodeSeq") long nodeSeq
 	){

@@ -44,6 +44,7 @@ public class NodeQueryRepository {
 			)
 			.from(nodeInfoEntity)
 			.where(
+				nodeInfoEntity.delYn.eq(false),
 				nodeInfoEntity.clusterInfoEntity.clusterSeq.eq(nodeListReq.getClusterSeq()),
 				cursorPaging(nodeListReq.getLastSeq())
 			)
