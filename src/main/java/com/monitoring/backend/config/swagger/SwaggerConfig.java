@@ -20,8 +20,8 @@ public class SwaggerConfig {
 	@Bean
 	public Info apiInfo(){
 		return new Info()
-			.title("Container Monitoring swagger")
-			.description("Container Monitoring swagger")
-			.version("prototype");
+			.title("Container Monitoring API")
+			.description("Container Monitoring API 명세서")
+			.version("prototype-0.0.1");
 	}
 }
