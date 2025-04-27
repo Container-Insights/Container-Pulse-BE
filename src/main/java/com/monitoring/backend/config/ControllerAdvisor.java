@@ -27,7 +27,7 @@ public class ControllerAdvisor {
 	/**
 	 * 커스텀 예외들
 	 */
-	@ExceptionHandler
+	@ExceptionHandler(RuntimeException.class)
 	public CommonResponse exceptionHandler(CustomException e) {
 
 		CustomStatus status = e.getCustomExceptionStatus();
@@ -44,7 +44,7 @@ public class ControllerAdvisor {
 	/**
 	 * 커스텀 예외로 잡히지 않은 에러들
 	 */
-	@ExceptionHandler
+	@ExceptionHandler(Exception.class)
 	public CommonResponse exceptionHandler(Exception e) {
 
 		log.error("[ Exception - {}] : {}",
