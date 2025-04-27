@@ -1,5 +1,6 @@
 package com.monitoring.backend.config.response;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,8 +12,10 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "응답시 반환데이터 추가 모델")
 public class DataResponse<T> extends CommonResponse{
 
+	@Schema(description = "반환될 데이터 정보.")
 	T data;
 
 	public static <T> DataResponse<T> createDataResponse(T data, CustomStatus status){

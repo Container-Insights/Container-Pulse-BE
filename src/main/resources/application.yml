@@ -1,0 +1,6 @@
+springdoc:
+  packagesToScan: com.monitoring.backend.api
+  swagger-ui:
+    path: /container-swagger-api
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json

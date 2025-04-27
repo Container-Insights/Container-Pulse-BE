@@ -2,6 +2,7 @@ package com.monitoring.backend.config.response;
 
 import static com.monitoring.backend.config.response.ResponseStatus.*;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,10 +14,14 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "공통 응답 모델")
 public class CommonResponse {
 
+	@Schema(description = "상태 코드 - 서버에서 정의한 코드")
 	private String code;
+	@Schema(description = "상태 값 - SUCCESS, FAIL, ERROR)")
 	private String status;
+	@Schema(description = "상태 메시지 - 서버에서 정의한 메시지")
 	private String message;
 
 

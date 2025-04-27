@@ -24,7 +24,7 @@ public class CodeGroupInfoEntity extends BaseTimeEntity {
 	@Column(name = "code_group_seq")
 	private long codeGroupSeq;
 
-	@Column(name = "code_group_id", length = 10, nullable = false)
+	@Column(name = "code_group_id", length = 50, nullable = false)
 	private String codeGroupId;
 
 	@Column(name = "code_group_name", length = 50, nullable = false)

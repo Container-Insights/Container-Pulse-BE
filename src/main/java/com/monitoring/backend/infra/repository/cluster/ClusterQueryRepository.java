@@ -33,7 +33,6 @@ public class ClusterQueryRepository {
 	/*목록 조회*/
 	public List<ClusterListRes> findClusters(ClusterListReq clusterListReq, Pageable pageable) {
 
-		log.info("test111");
 		return queryFactory
 			.select(
 				Projections.fields(
