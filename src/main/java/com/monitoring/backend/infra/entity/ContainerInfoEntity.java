@@ -33,6 +33,9 @@ public class ContainerInfoEntity extends BaseTimeEntity {
 	@Column(name = "container_name", length = 255, nullable = false)
 	private String containerName;
 
+	@Column(name = "container_type", length = 50, nullable = false)
+	private String containerType;
+
 	@Column(name = "container_image", length = 255, nullable = false)
 	private String containerImage;
 

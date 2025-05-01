@@ -33,6 +33,12 @@ public class NodeInfoEntity extends BaseTimeEntity {
 	@Column(name = "node_name", length = 255, nullable = true)
 	private String nodeName;
 
+	@Column(name = "node_type", length = 50, nullable = false)
+	private String nodeType;
+
+	@Column(name = "master_yn", columnDefinition = "boolean default false not null")
+	private boolean masterYn = false;
+
 	@Column(name = "ip_address", length = 255, nullable = false)
 	private String ipAddress;
 

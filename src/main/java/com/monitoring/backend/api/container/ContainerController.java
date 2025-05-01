@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@Tag(name = "Container", description = "컨테이너 그룹 관련 API")
+@Tag(name = "Container", description = "컨테이너 관련 API")
 public class ContainerController {
 
 	private final ContainerService containerService;
