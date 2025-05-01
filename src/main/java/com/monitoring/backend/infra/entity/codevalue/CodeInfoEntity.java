@@ -2,6 +2,7 @@ package com.monitoring.backend.infra.entity.codevalue;
 
 import org.hibernate.annotations.DynamicUpdate;
 
+import com.monitoring.backend.dto.res.codevalue.CodeInfoRes;
 import com.monitoring.backend.infra.entity.common.BaseTimeEntity;
 
 import jakarta.persistence.Column;
@@ -33,11 +34,17 @@ public class CodeInfoEntity extends BaseTimeEntity {
 	@Column(name = "code_name", length = 50, nullable = false)
 	private String codeName;
 
-	@Column(name = "del_yn", columnDefinition = "boolean default false not null")
-	private boolean delYn = false;
-
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "code_group_seq", nullable = false)
 	private CodeGroupInfoEntity codeGroupInfoEntity;
+
+
+	public CodeInfoRes toResDto(){
+		return CodeInfoRes.builder()
+				.codeSeq(this.codeSeq)
+				.codeId(this.codeId)
+				.codeName(this.codeName)
+				.build();
+	}
 
 }

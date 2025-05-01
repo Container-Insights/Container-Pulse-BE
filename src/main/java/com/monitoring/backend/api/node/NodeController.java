@@ -48,11 +48,7 @@ public class NodeController {
 		return responseService.getDataResponse(nodeService.getNodeList(nodeListReq, pageable));
 	}
 
-	/**
-	 * 단건 노드 정보 조회.
-	 * @param nodeSeq
-	 * @return
-	 */
+
 	@ApiCommonDoc(
 		summary = "노드 단건 조회",
 		description = "노드 식별자(시퀀스)로 노드 정보 조회(페이징 적용)",
