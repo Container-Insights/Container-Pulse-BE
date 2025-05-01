@@ -30,7 +30,7 @@ public class ClusterInfoEntity extends BaseTimeEntity {
 	@Column(name = "cluster_name", length = 255, nullable = true)
 	private String clusterName;
 
-	@Column(name = "cluster_type", length = 10, nullable = true)
+	@Column(name = "cluster_type", length = 50, nullable = true)
 	private String clusterType;
 
 	@Column(name = "del_yn", columnDefinition = "boolean default false not null")

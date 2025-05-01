@@ -30,7 +30,7 @@ public class ContainerGroupEntity extends BaseTimeEntity {
 	@Column(name = "con_group_id", length = 255, nullable = false)
 	private String conGroupId;
 
-	@Column(name = "con_group_type", length = 10, nullable = false)
+	@Column(name = "con_group_type", length = 50, nullable = false)
 	private String conGroupType;
 
 	@Column(name = "con_group_name", length = 255, nullable = false)
