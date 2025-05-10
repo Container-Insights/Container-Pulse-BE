@@ -86,7 +86,7 @@ public class ControllerAdvisor {
 						""",
 					LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss")),
 					request.getRequestURI(),
-					e.getMessage()
+					e.getMessage().substring(0,1000)
 				)
 			)
 		);
