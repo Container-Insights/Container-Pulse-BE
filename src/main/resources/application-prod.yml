@@ -1,0 +1,8 @@
+discord:
+  webhook:
+    url: https://discord.com/api/webhooks/1370674269197176832/no3k27udHPGGJ-5reJLOYyWDXujr9RpDOHUhXdYx8VeuuN-qAhaqmLm1LzvpssR-F-iE
+    connect-timeout: 3
+
+http:
+  client:
+    connect-timeout: 5
