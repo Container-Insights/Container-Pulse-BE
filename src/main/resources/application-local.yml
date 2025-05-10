@@ -16,3 +16,12 @@ spring:
         default_schema: container
     show-sql: true
     open-in-view: false
+
+discord:
+  webhook:
+    url: https://discord.com/api/webhooks/1370723679108989028/56veh7dFQBqqNMrWXs9-5gr87Ju6i_QcvAbUBwZ5zA1Ps76oF65_uNcXWjS2VvPUHL9r
+    connect-timeout: 3
+
+http:
+  client:
+    connect-timeout: 5
