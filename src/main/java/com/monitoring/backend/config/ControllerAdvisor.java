@@ -5,7 +5,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.monitoring.backend.config.discord.DiscordAlertEmbedMessage;
@@ -51,7 +53,11 @@ public class ControllerAdvisor {
 	 * 커스텀 예외로 잡히지 않은 에러들
 	 */
 	@ExceptionHandler(Exception.class)
+	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) //서버 내부 에러일때만 보냄
 	public CommonResponse exceptionHandler(Exception e, HttpServletRequest request) {
+
+
+		e.printStackTrace();
 
 		String errorFormat = String.format("[ Exception - %s] : %s",
 			LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss")),
